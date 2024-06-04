@@ -95,6 +95,7 @@
             // 
             // NotepadSaveFileDialog
             // 
+            NotepadSaveFileDialog.Filter = "テキストファイル|*.txt|すべてのファイル|*.*";
             NotepadSaveFileDialog.FileOk += NotepadSaveFileDialog_FileOk;
             // 
             // Form1

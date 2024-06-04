@@ -40,9 +40,7 @@ namespace memoapp
         /// <param name="e"></param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StreamWriter sw = new StreamWriter("text.txt", false);
-            sw.Write(NotepadTextBox.Text);
-            sw.Close();
+            NotepadSaveFileDialog.ShowDialog();
         }
         /// <summary>
         /// ファイルをひらく　OKボタン押下
@@ -60,7 +58,9 @@ namespace memoapp
         /// <param name="e"></param>
         private void NotepadSaveFileDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
+            StreamWriter sw = new StreamWriter(NotepadSaveFileDialog.FileName, false);
+            sw.Write(NotepadTextBox.Text);
+            sw.Close();
         }
     }
 }
